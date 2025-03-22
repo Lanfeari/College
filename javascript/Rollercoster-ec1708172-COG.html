@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Webpage</title>
+</head>
+<body>
+  <h1>Welcome to My Test Webpage</h1>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      let height = prompt("Enter your height in meters.. you must be above 1.5 meters to ride");
+      // i would like to add a paramater to check if user enters any charcters and strip them from input but do not have time
+    while (isNaN(height)){
+        alert("Please enter a number");
+        height = prompt("Enter your height in meters.. you must be above 1.5 meters to ride");
+        if (isNaN(height)){
+            alert('Invalid input')
+            exit
+        }
+    }
+    if (height > 1.5){
+        alert("You can ride");
+    }
+    else{
+        alert("You cannot ride");
+    }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Webpage</title>
+</head>
+<body>
+  <h1>Welcome to My Test Webpage</h1>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      userInputPounds = prompt("Enter your amount of money in pounds");
+
+    while (isNaN(userInputPounds)) {
+        alert("Please enter numbers only");
+        userInputPounds = prompt("Enter your amount of money in pounds")
+        if (isNaN(userInputPounds)) {
+            alert('Invalid input')
+            exit
+        }
+    }
+    
+    userInputPounds = parseFloat(userInputPounds);
+    euros = userInputPounds * 1.21;
+    dollars = userInputPounds * 1.27;
+    zloty = userInputPounds * 5.03;
+    australianDollar = userInputPounds * 2.04;
+
+    convert = prompt("Enter the currency you want to convert to")
+
+    if (convert === "euro" || convert === "eur") {
+        alert(`you can get ${euros} euros from ${userInputPounds} pounds`)
+    }
+    else if (convert === "dollar" || convert === "usd") {
+        alert(`you can get ${dollars} dollars from ${userInputPounds} pounds`)
+    }
+    else if (convert === "zloty") {
+        alert(` you can get ${zloty} zloty from ${userInputPounds} pounds`)
+    }
+    else if (convert === "aus" || convert === "australian dollar" || convert === "australian"){
+        alert(` you can get ${australianDollar} aussie bucks from ${userInputPounds} pounds`)
+    }
+  }
+  
+  </script>
+</body>
+</html>
