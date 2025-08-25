@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Webpage</title>
+</head>
+<body>
+  <h1>Welcome to My Test Webpage</h1>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      let age = null;
+      //I had most of this myself, copilot added the or coniditon and corrected a mistyped syntax. i now understand why it would 
+      // not run before.
+      while (isNaN(age) || age === null) {
+        try {
+        age = prompt("Enter your age");
+        }
+        catch (e) {
+        alert("Invalid input");
+        }
+        finally {
+        age = parseInt(age);
+        }
+        if (!isNaN(age)) {
+        if (age >= 21) {
+            alert("You are mature");
+            break;
+        } 
+        else {
+            alert("You are not mature");
+            break;
+        }
+        } else {
+        alert("Please enter a valid number");
+        }
+        age = null;
+      }
+    }
+  </script>
+</body>
+</html>

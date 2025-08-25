@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Webpage</title>
+</head>
+<body>
+  <h1>Welcome to My Test Webpage</h1>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      let userInputExamMark = prompt("Enter your exam mark");
+    while (isNaN(userInputExamMark) || userInputExamMark < 0 || userInputExamMark > 100) {
+        alert("not a valid input");
+        userInputExamMark = prompt("Enter your exam mark");
+        if (isNaN(userInputExamMark) || userInputExamMark < 0 || userInputExamMark > 100) {
+            alert('Invalid input')
+            exit
+        }
+    }
+    // i would instead use a case and switch statement here or a dictionary instead of this but i do not have time
+     userInputExamMark = parseInt(userInputExamMark);
+    if (userInputExamMark === 100) {
+        alert('Well done you got an A - Superb')
+    }
+    else if (userInputExamMark >= 90 && userInputExamMark <= 99) {
+        alert('Well done you got an A - Excellent')
+    }
+    else if (userInputExamMark >= 80 && userInputExamMark <= 89) {
+        alert('Well done you got an B - Very Good')
+    }
+    else if (userInputExamMark >= 70 && userInputExamMark <= 79) {
+        alert('Well done you got an C - good')
+    }
+    else if (userInputExamMark >= 60 && userInputExamMark <= 69) {
+        alert('Well done you got an D - must do better')
+    }
+    else {
+        alert('You failed')
+    }
+  }
+  
+  </script>
+</body>
+</html>

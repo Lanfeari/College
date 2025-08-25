@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Webpage</title>
+</head>
+<body>
+  <h1>Welcome to My Test Webpage</h1>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      let adult = prompt("Enter the number of adults");
+    let child = prompt("Enter the number of children");
+
+    while (isNaN(adult) || isNaN(child)) {
+        alert("Please enter numbers only");
+        adult = prompt("Enter the number of adults");
+        child = prompt("Enter the number of children");
+        if (isNaN(adult) || isNaN(child)) {
+            alert('Invalid input')
+            exit
+        }
+    }
+    adultCost = adult * 10
+    childCost = child * 5
+    totalCost = adultCost + childCost
+
+    delivery = prompt("Would you like the tickets delivered?")
+    if (delivery === 'yes' || delivery === 'y'){
+        totalCost += 5
+    }
+    else (delivery === 'no' || delivery === 'n');{
+    }
+
+    if (totalCost > 50) {
+        totalCost -= 10
+        alert(`${adult} adults and ${child} children will cost £${totalCost}` )
+    }
+    else {
+        alert(`${adult} adults and ${child} children will cost £${totalCost}` )
+    }
+  }
+  
+  </script>
+</body>
+</html>

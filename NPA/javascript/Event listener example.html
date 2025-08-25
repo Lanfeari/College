@@ -1,0 +1,43 @@
+<h>Would you like to see count values per hour or minute?</h><br>
+<Select id="Selector">
+   <option value="hr">Hour</option>
+   <option value="min">Minute</option>
+   x = changeListener
+</Select>
+<div id="Btn1">
+<button id="btn1" type="submit" input style="background-color:#FFFF00;color:black" name="submitSent" class="btn btn-primary"onclick="if(!confirm(document.getElementById('Selector').value)){return false;}" >Send</button> </form>
+</div>
+<script>
+function addition(){
+    var N1 = 0
+    N1 = parseInt(prompt('What is the first number to add? ',0));
+    var N2 = 0
+    N2 = parseInt(prompt('what is the second number? ',0));
+    var NT = 0
+    var NT = N1 + N2;
+    
+    alert(NT)}
+    </script>
+<script>
+
+  document.getElementById("Selector").onchange = changeListener;
+  x = changeListener
+  
+  function changeListener(){
+  var value = this.value
+    console.log(value);
+    
+    if (value == "min"){
+      document.body.style.background = "red";
+      return value = 15
+    }else if (value == "hr"){
+      document.body.style.background = "blue";
+      return 20
+    }
+    
+  }
+
+
+  
+
+</script>

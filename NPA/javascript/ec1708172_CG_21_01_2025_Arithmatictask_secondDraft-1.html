@@ -1,0 +1,390 @@
+<!-- I found this very fun and enagaging, HTML seems extremely intresting in how it works and what it allows us to do
+ the initial challange of calculations was informative. it gave me insight into how js code handles mathamatics,
+ i had trouble in the begining with the "+" witch was just conceating the two inputted strings but i finally figured that out.
+ after doing the intial requirements i wanted to see if i could get the 4 functions to be selectable and run from a dropwdown menu
+ this was alot more diffcuilt that i expected and it's likely because i didn't know what question i was asking.
+ my inital attempt involed a eventlistener function that executed whenever the dropdown menu changed witch was not ideal
+ to get the function to only run when i pressed the button seemed hard but in the end the solution was infact simple.
+ i will include a comment at the bottom containing some of these attemps and i look foward to going over this again in class
+ i can't wait to find out how this is done elegantly and well.
+ -->
+
+<!DOCTYPE html> <!-- This was auto generated code from vs-code, a simple template for my program-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    // alternatively to these multi line functions we could have return the calculation without forst setting it
+<script class="funct">
+const area = function area() {
+    //Getting and setting the length and widith from user
+    let len = parseInt(prompt('What is the length of the room?'));
+    let wid = parseInt(prompt('What is the widith of the room?'));
+    //performing the calculation
+    let area = len * wid;
+    //Return the value of area
+    return area; // the units will be handled on the other end
+};
+</script>
+
+<script class="funct">
+const price = function price() {
+    //getting and setting the item price and quanitity.
+    //we do not have a dictionary to check against so we are trust user for everything here
+    let p = parseInt(prompt('What is the price?'));
+    let q = parseInt(prompt('How many?'));
+    //the calculation
+    let t = p * q;
+    //returning
+    return t;
+};
+</script>
+
+<script class="funct">
+const exchange = function exchange() {
+    //getting and setting rate and amount
+    let amount = parseInt(prompt('How many euros do you want to change? '));
+    let rate = parseInt(prompt('And the current eur to usd rate? '));
+    //perform calculation
+    let change = amount * rate;
+    //returning
+    return change;
+};
+</script>
+
+<script class="funct">
+const cubed = function cubed() {
+    //getting and setting the number user wants
+    let x = parseInt(prompt('What number do you want to cube?'));
+    //perform calculation
+    let y = x ** 3;
+    //returning 
+    return y;
+};
+</script>
+
+<script class="funct">
+const kiloToLbs = function kiloToLbs() {
+    //getting and setting the kilos to convert
+    let x = parseInt(prompt('Weight in kilos? '));
+    let y = x * 2.2;
+    //return the converted value
+    return y;
+};
+</script>
+
+<script class="funct">
+const lbsToKilos = function lbsToKilos() {
+    //getting and setting given lbs
+    let x = parseInt(prompt('How many pounds do you want to convert? '));
+    //calculation
+    let y = x / 2.2;
+    //returning 
+    return y;
+};
+</script>
+
+<script class="funct">
+const meterToInch = function meterToInch() {
+    //getting and setting the meters
+    let x = parseInt(prompt('Meters to convert? '));
+    //perform the calcualtion
+    let y = x * 39.3;
+    //returning 
+    return y;
+};
+</script>
+
+<script class="funct">
+const inchToMeter = function inchToMeter() {
+    //getting and setting the inches
+    let x = parseInt(prompt('Inches to convert? '));
+    //perform the calculation
+    let y = x / 39.3;
+    //returning 
+    return y;
+};
+</script>
+
+<script class="funct">
+const mileToKilo = function mileToKilo(){
+    //getting and setting user input
+    let x = parseInt(prompt('Miles to convert? '));
+    //calculation
+    let y = x * 1.6;
+    //returning
+    return y;
+};
+</script>
+
+<script class="funct">
+const kiloToMile = function kiloToMile(){
+    //getting and setting user input
+    let x = parseInt(prompt('Kilometers to convert? '))
+    //calculation 
+    let y = x / 1.6;
+    //returning
+    return y;
+};
+</script>
+
+<script class="funct">
+const celToFah = function celToFah(){
+    //getting and setting celsius
+    let x = parseInt(prompt('Temprature is celsius?'))
+    //calculation
+    let y = x * (9/5) + 32;
+    return y;
+};
+</script>
+
+<script class="funct">
+const fahToCel = function fahToCel(){
+    //getting and setting fah
+    let x = parseInt(prompt('what is temp in fahrenheit? '));
+    //calc
+    let y = x - 32 * (5/9);
+    // return y
+    return y;
+}
+</script>
+
+<script class="funct">
+const budget1 = function budget1(){
+    let x =  parseInt(prompt('What is your budget?'))
+    let y = parseInt(prompt('How much is a single item?'))
+    if (y/x < 0){
+        alert('You can\'t get any')
+    }
+    else{
+        z = Math.round(y/x)
+        alert('You can get' + z + 'items withs that much!')
+    }
+}
+</script>
+
+<script class="funct">
+budget2 = function budget2(){
+    let x =  parseInt(prompt('What is your budget?'))
+    let y = parseInt(prompt('How much is a single item?'))
+    if (y/x < 0){
+        alert('You can\'t get any')
+    }
+    else{
+        let z = x/y
+        let t = z*y - x
+        alert('You can buy ' + z + ' With that budget ' + 'You will have ' + t + ' left over')
+    }
+}
+</script>
+
+<script class="funct">
+//This one was intresting. challanged myself by trying to use fewer lines of code but didnt do to well on that
+//The added pPp charge would be a engaging challange if the dvd amount was dynamic 
+DVD = function dvd(){
+    let [x, y , z] = ['', '', ''];
+    let [x2, y2, z2] = [0, 0, 0];
+    let [x3, y3, z3] = [0,0, 0];
+    let [tx, ty, tz, tTotal] = [0, 0, 0, 0]
+    while ( !x && !x2 && !x3 ) [x , x2, x3] = [prompt('Enter dvd title'), prompt('price? '), prompt('How many?')];
+    while ( !y && !y2 && !y3 ) [y , y2, y3] = [prompt('Enter second title'), prompt('Price? '), prompt('How many?')];
+    while ( !z && !z2 && !z3 ) [z , z2, z3] = [prompt('Enter third title'), prompt('Price? '), prompt('How many?')];
+    tx = x2*x3
+    ty = y2*y3
+    tz = z2*z3
+    tTotal = tx + ty +tz
+    tTotalVat = tTotal * 0.2
+    tTotal = tTotal + tTotalVat
+    tTotal = tTotal + 4
+    alert(tTotal)
+}
+</script>
+</head>
+<body>
+   <h1>Choose a option</h1>     <!--This is displaying text within the program as header 1, although i didn't look into it much-->
+        <select id = "opt" title="options1">     <!--This is a selector element for a dropdown menu, intially i thought about making 4 buttons instead, witch i think would have been much easier-->
+        
+            <!--These are the options listed in the dropdown menu and the value they are assossciated with-->
+            <option value = class funct >Addition</option> 
+            <option value = "subtraction">Subtraction</option>
+            <option value = "multipilcation">Multipilcation</option>
+            <option value = "division">Division</option>
+        
+        </select>
+
+   <button id="button">click here</button>
+<script type="text/javascript"> // This is my script for dynmaically choosing the function to run, i had to look around alot! before landing on this solution and i am pretty happy with it.
+    const btn = document.getElementById("button") // Setting the button element as the btn constant within the context on my function.
+    btn.addEventListener("click", function() { // Defining the fuction to execute upon the click of the button
+      switch (document.getElementById("opt").value) { // this is the same as the if else block i ahd previously but with a switch statement.
+      case "addition":
+        addition();
+        break;
+      case "subtraction":
+        subtraction();
+        break;
+      case "multipilcation":
+        multipilcation();
+        break;
+      case "division":
+        division();
+        break;
+      }})
+      //The only diffrence in this draft is using a switch statement instead of a if else block, i think this is much cleaner and easier to read.
+</script>
+
+<script>  // These are the functions i wrote to preform the calculations
+function addition(){
+    //setting my var's to 0, although i do not know why the document i read said it was good practice
+    let [x, y , z] = ['', '', ''];
+    let [x2, y2, z2] = [0, 0, 0];
+    let [x3, y3, z3] = [0,0, 0];
+    let [tx, ty, tz, tTotal] = [0, 0, 0, 0]
+    while ( !x && !x2 && !x3 ) [x , x2, x3] = [prompt('Enter dvd title'), prompt('price? '), prompt('How many?')];
+    while ( !y && !y2 && !y3 ) [y , y2, y3] = [prompt('Enter second title'), prompt('Price? '), prompt('How many?')];
+    while ( !z && !z2 && !z3 ) [z , z2, z3] = [prompt('Enter third title'), prompt('Price? '), prompt('How many?')];
+    tx = x2*x3
+    ty = y2*y3
+    tz = z2*z3
+    tTotal = tx + ty +tz
+    tTotalVat = tTotal * 0.2
+    tTotal = tTotal + tTotalVat
+    tTotal = tTotal + 4
+    alert(tTotal)
+
+
+    }   // This is the output, we use the + here to create a string that is better for the user 
+
+function subtraction(){
+    var n1 = 0;
+    var n2 = 0;
+    var n3 = 0;
+    //we do not need to "parseInt" here because the "-" is not multifuction like "+"
+    n1 = prompt('Enter the first number? ',0);
+    n2 = prompt('Enter the second number? ',0);
+    n3 = n1 - n2;
+    alert(n1+'-'+n2+'='+n3);
+}
+
+function division(){
+    var n1 = 0;
+    var n2 = 0;
+    var n3 = 0;
+    // entering 1 as the defualt vlaue for division because dividing by 0 is never a great idea.
+    n1 = prompt('Enter the numerator? ',1);
+    n2 = prompt('Enter the denominator? ',1);
+    n3 = n1 / n2;
+    alert(n1+'/'+n2+'='+n3);
+
+}
+
+function multipilcation(){
+    var n1 = 0;
+    var n2 = 0;
+    var n3 = 0;
+    // entering 1 as the defualt vlaue for division because dividing by 0 is never a great idea.
+    n1 = prompt('Enter the first number ',0);
+    n2 = prompt('Enter the second number? ',0);
+    n3 = n1 * n2;
+    alert(n1+'x'+n2+'='+n3);
+}
+
+</script>
+</body>
+</html>
+<!-- Below this is all just notes on ,and the code for the other 2 solutions i was trying.-->
+
+<!--
+---------------This was some example code i was playing with to try and figure this out(from stack overflow)--------------------------------
+
+<h>Would you like to see count values per hour or minute?</h><br>
+<Select id="Selector">
+   <option value="hr">Hour</option>
+   <option value="min">Minute</option>
+   
+</Select>
+<div id="Btn1">
+  <p><input type="button" value="submit" onClick="addition();"></p>
+  </div>
+<script>
+function addition(){
+    var N1 = 0
+    N1 = parseInt(prompt('What is the first number to add? ',0));
+    var N2 = 0
+    N2 = parseInt(prompt('what is the second number? ',0));
+    var NT = 0
+    var NT = N1 + N2;
+    
+    alert(NT)}
+    </script>
+<script>
+const div = document.getElementById('Btn1');
+  document.getElementById("Selector").onchange = changeListener;
+  
+    function changeListener(){
+      var value = this.value
+      console.log(value);
+    
+      if (value == "min"){
+        div.innerhtml = '<p>input type="button" value="submit" onClick="</p>;'
+        
+    }
+      else if (value == "hr"){
+        document.body.style.background = "blue";
+        return 20
+    }
+    
+  }
+</script>
+-------------- As you can see if was playing with idea of returning a value and setting a var outside of the function 
+it did not work and i gave up once i realised that there must be a better solution and that returning values from functions back
+into HTML was beyond what i was trying to do --------------------------------------------
+
+-------------This was the other solutuion i persued but i couldn't get this too work either--------------
+<h>Would you like to see count values per hour or minute?</h><br>
+<Select id="Selector">
+   <option value="hr">Hour</option>
+   <option value="min">Minute</option>
+   
+</Select>
+<div id="Btn1">
+  <p><input type="button" value="submit" onClick="addition();"></p>
+  </div>
+<script>
+function addition(){
+    var N1 = 0
+    N1 = parseInt(prompt('What is the first number to add? ',0));
+    var N2 = 0
+    N2 = parseInt(prompt('what is the second number? ',0));
+    var NT = 0
+    var NT = N1 + N2;
+    
+    alert(NT)}
+    </script>
+<script>
+const div = document.getElementById('Btn1');
+  document.getElementById("Selector").onchange = changeListener;
+  
+    function changeListener(){
+      var value = this.value
+      console.log(value);
+    
+      if (value == "min"){
+        div.innerhtml = '<p>input type="button" value="submit" onClick="</p>;'
+        
+    }
+      else if (value == "hr"){
+        document.body.style.background = "blue";
+        return 20
+    }
+    
+  }
+</script>
+-----------------------------------------was trying to rewrite the onclick property of the button whenever the value of the dropdown changed to corrospond
+to the function i wanted--------------
+
+These were the two main paths i looked at i was able to find the third and final solution.
+this is very exciting and i can't wait to see where this can go.
+
+-->

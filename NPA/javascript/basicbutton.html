@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Webpage</title>
+</head>
+<body>
+  <h1>Welcome to My Test Webpage</h1>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+    let lives = prompt("Enter the lives you had remaining");
+    let level = prompt("Enter the level you reached");
+    let gameplayScore = prompt("Enter your gameplay score");
+
+    while (isNaN(lives) || isNaN(level)  || isNaN(gameplayScore)) {
+        alert("not a valid input");
+
+        userInputExamMark = prompt("Enter your exam mark");
+
+        if (isNaN(lives) || isNaN(lives) || isNaN(lives)) {
+            alert('Invalid input')
+            exit
+        }
+    }
+    //this was very annoying! each variable needs it's own brackets or it treats them kinda as strings anyway.
+    let livesScore = parseFloat(lives * 10)
+    alert(livesScore)
+    let levelScore = parseFloat(level * 100)
+    alert(levelScore)
+    alert(gameplayScore)
+    let totalScore = parseFloat(gameplayScore) + (livesScore) + (levelScore)
+    alert(totalScore)
+
+    if (totalScore > 1000) {
+        alert('You are an expert - excellent')
+    }
+    else if (totalScore > 750 && totalScore < 1000) {
+        alert('You are a good player - flying high')
+    }
+    else if (totalScore > 500 && totalScore < 750) {
+        alert('You are a good player - a good effort')
+    }
+    else if (totalScore > 250 && totalScore < 500) {
+        alert('You are a good player - what happened?')
+    }
+    else if (totalScore < 250) {
+        alert('have you even seen a computer before!')
+    }
+    else{
+        alert('there has been a mistake')
+        exit
+    }
+  }
+  
+  </script>
+</body>
+</html>
